@@ -1,0 +1,2 @@
+class BarReviewsController < ApplicationController
+end
