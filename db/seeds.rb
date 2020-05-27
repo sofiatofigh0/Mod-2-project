@@ -16,10 +16,10 @@ if response.code == "200"
    @info_hash = JSON.parse(response.body)
 end
 
-@info_hash["businesses"].map do |content,values|
-        content["categories"].map do |key|
-     Restaurant.create(name:content["name"],cuisine:key["title"],address:content["location"]["display_address"][0] + "," + content["location"]["display_address"][1],phone_number:content["display_phone"],yelp_rating:content["rating"],price_range:content["price"],img_url:content["image_url"])
-   end
+@info_hash["businesses"].uniq.map do |content,values|
+   #     content["categories"].uniq.map do |key|
+     Restaurant.create(name:content["name"],address:content["location"]["display_address"][0] + "," + content["location"]["display_address"][1],phone_number:content["display_phone"],yelp_rating:content["rating"],price_range:content["price"],img_url:content["image_url"])
+ # end
 end
 
 76.times do 
