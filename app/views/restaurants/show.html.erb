@@ -5,3 +5,11 @@
 <p>Restaurant yelp rating:<%= @restaurant.yelp_rating%></p>
 <p>Restaurant pricing:<%= @restaurant.price_range%></p>
 <p>img_url</p>
+<p>Restaurant reviews: </p> 
+<% @restaurant.restaurant_reviews.each do |review| %>
+<p> Safety:<%=review.safety%> </p>
+<p> Hand sanitizer: <%=review.hand_sanitizer %> </p>
+<p> Masks: <%=review.masks %> </p>
+<p> To-Go Available: <%=review.to_go %> </p>
+<p> Reduced Seating enforced: <%=review.reduced_seating %> </p>
+    <%  end %>     
