@@ -5,7 +5,6 @@ class RestaurantReviewsController < ApplicationController
     
     def new
         @restaurant_review=RestaurantReview.new
-        @options=[['very unsafe', 1], ['unsafe', 2], ['average', 3], ['safe', 4], ['very safe', 5]]
     end
     
     def create
