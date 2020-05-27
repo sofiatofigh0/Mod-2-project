@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2020_05_26_211350) do
     t.string "cuisine"
     t.string "address"
     t.integer "phone_number"
-    t.integer "yelp_rating"
+    t.float "yelp_rating"
     t.string "price_range"
     t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
