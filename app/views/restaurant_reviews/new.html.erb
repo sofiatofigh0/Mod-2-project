@@ -1,0 +1,25 @@
+<h1>create a review</h1>
+
+<%= form_for @restaurant_review do |f| %>
+<%= f.collection_select :restaurant_id,Restaurant.all,:id,:name %><br>
+<p>How safe did you feel? (1-5)</p>
+<%= f.select (:safety, @options , {}, { class: "form-control" }) %>
+
+
+<%= f.hidden_field :user_id, value: params[:user_id] %>
+
+<%= f.submit %>
+    
+<% end %>
+
+
+
+<!-- t.integer "restaurant_id"
+    t.integer "user_id"
+    t.integer "safety"
+    t.boolean "hand_sanitizer", default: false
+    t.boolean "masks", default: false
+    t.boolean "to_go", default: false
+    t.boolean "reduced_seating", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at",  -->

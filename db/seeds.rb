@@ -2,7 +2,7 @@ require "uri"
 require "net/http"
 require 'faker'
 
-url = URI("https://api.yelp.com/v3/businesses/search?location=New York")
+url = URI("https://api.yelp.com/v3/businesses/search?location=New York&limit=50")
 
 https = Net::HTTP.new(url.host, url.port);
 https.use_ssl = true
@@ -17,9 +17,7 @@ if response.code == "200"
 end
 
 @info_hash["businesses"].uniq.map do |content,values|
-   #     content["categories"].uniq.map do |key|
      Restaurant.create(name:content["name"],address:content["location"]["display_address"][0] + "," + content["location"]["display_address"][1],phone_number:content["display_phone"],yelp_rating:content["rating"],price_range:content["price"],img_url:content["image_url"])
- # end
 end
 
 76.times do 

@@ -1,0 +1,13 @@
+<h1>create a review</h1>
+
+<%= form_for @restaurant_review do |f| %>
+<%= f.collection_select :restaurant_id,Restaurant.all,:id,:name %><br>
+<p>How safe did you feel? (1-5)</p>
+<%= f.select :safety, @options  %>
+
+
+<%= f.hidden_field :user_id, value: params[:user_id] %>
+
+<%= f.submit %>
+    
+<% end %>

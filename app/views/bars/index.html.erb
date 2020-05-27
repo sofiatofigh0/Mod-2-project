@@ -1,0 +1,5 @@
+
+<% @bars.each do |bar| %>
+<p>Bar name:<%= link_to bar.name,bar_path(bar.id)%></p>
+
+<% end %>
