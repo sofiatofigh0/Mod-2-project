@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     if @logged_in_user
     
     else
-      flash[:error] = "Gotta Log In Homie"
+      flash[:error] = "You must login or signup to view this page!"
       redirect_to new_login_path
     end 
   end

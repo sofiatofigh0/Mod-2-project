@@ -15,18 +15,20 @@
       <img class='logo' src="https://thekitchngic.com/wp-content/uploads/2019/06/0_I95gSMSKfIcYFfa3_.png" width="1050" height="500" alt="barlogo">
     </div>
 
-      <ul>
-        <li><%= link_to 'User Home', users_path %></li>
-        <li><%= link_to 'Restaurants', restaurants_path %></li>
-        <li><%= link_to 'Bars', bars_path %></li>
-        <% if @logged_in_user %>
-          <li class='right'>Welcome <%= @logged_in_user.name %></li>
-          <li class='right'><%= link_to 'Log-out', logout_path, method: :delete %></li>
-        <% else %>
-          <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
-          <li class='right'><%= link_to 'Log-in', new_login_path %></li>
-        <% end %>
-      </ul>
+    <ul>
+      <li><%= link_to 'User Home', users_path %></li>
+      <li><%= link_to 'Restaurants', restaurants_path %></li>
+      <li><%= link_to 'Bars', bars_path %></li>
+      <% if @logged_in_user %>
+        <li class='right'>Welcome <%= @logged_in_user.name %></li>
+        <li class='right'><%= link_to 'Log-out', logout_path, method: :delete %></li>
+      <% else %>
+        <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
+        <li class='right'><%= link_to 'Log-in', new_login_path %></li>
+      <% end %>
+    </ul>
+
+      
 
   
     <%= yield %>
