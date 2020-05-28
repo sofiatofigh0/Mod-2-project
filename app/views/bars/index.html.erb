@@ -1,5 +1,11 @@
+<h1>All Listed Bars</h1>
+
+
+<form action="/bar_reviews/new" method="get">
+    Create a review for a bar:
+    <button name="review" type="submit" value="Create Review">Create Review</button>
+    </form>
 
 <% @bars.each do |bar| %>
 <p>Bar name:<%= link_to bar.name,bar_path(bar.id)%></p>
-
 <% end %>
