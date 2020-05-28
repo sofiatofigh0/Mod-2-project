@@ -1,5 +1,13 @@
 <h1>All Listed Restaurants</h1>
 
+<%= search_form_for @q do |f| %>
+ Search for a listed restaurant:
+  <%= f.search_field :name_cont %>
+  <%= f.submit  %>
+<% end %>
+
+<br>
+<br>
 
 <form action="/restaurant_reviews/new" method="get">
     Create a review for a restaurant:

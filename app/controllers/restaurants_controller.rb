@@ -2,8 +2,9 @@ class RestaurantsController < ApplicationController
     skip_before_action :authorized, only: [:index,:show]
 
         def index
-            @restaurants=Restaurant.all
-        end
+            @q = Restaurant.ransack(params[:q])
+        @   restaurants = @q.result(distinct: true)
+       end
         
         def new
             @restaurant=Restaurant.new
