@@ -1,12 +1,12 @@
 
-
+<img class="show-img" src="<%= @restaurant.img_url %>" alt="<%= @restaurant.name%>">
 <h1><%= @restaurant.name %></h1>
 
 <p>Restaurant address:<%= @restaurant.address%></p>
 <p>Restaurant phone number:<%= @restaurant.phone_number%></p>
 <p>Restaurant yelp rating:<%= @restaurant.yelp_rating%></p>
 <p>Restaurant pricing:<%= @restaurant.price_range%></p>
-<img class="show-img" src="<%= @restaurant.img_url %>" alt="<%= @restaurant.name%>">
+
 
 <p>Restaurant reviews: </p> 
 <% @restaurant.restaurant_reviews.each do |review| %>

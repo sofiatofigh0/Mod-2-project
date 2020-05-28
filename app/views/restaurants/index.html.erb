@@ -9,7 +9,7 @@
 <br>
  
 <% @restaurants.each do |restaurant| %>
-<li>Restaurant name:<%= link_to restaurant.name,restaurant_path(restaurant.id)%>
+<li> <%= link_to restaurant.name,restaurant_path(restaurant.id)%>
 <% end %>
   
 

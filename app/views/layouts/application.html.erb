@@ -1,21 +1,67 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CoronaProject</title>
+    <title>SafeSpots</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
 
-   <div class='nav'>
-      <%= image_tag "/logo.png" %> 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- <%= image_tag "/logo.png" %>  -->
+        <a class="navbar-brand" href="#"> <img src= "/logo.png" width="100px" > </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <!-- <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li> -->
+          
+              <ul class="navbar-nav" >
+                <li class="nav-item active"> <%= link_to 'User Home', users_path %></li>
+                <li class="nav-item active"> <%= link_to 'Restaurants', restaurants_path %></li>
+                <li class="nav-item active"> <%= link_to 'Bars', bars_path %></li>
+                <% if @logged_in_user %>
+                  <li class='right nav-item'>Welcome <%= @logged_in_user.name %></li>
+                  <li class='right nav-item'><%= link_to 'Log-out', logout_path, method: :delete %></li>
+                <% else %>
+                  <li class='right nav-item'><%= link_to 'Sign-up', new_user_path %></li>
+                  <li class='right nav-item'><%= link_to 'Log-in', new_login_path %></li>
+                <% end %>
+             
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Dropdown link
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div> -->
+          </li>
+        </ul> 
+      </div>
+    </nav>
 
-    </div>
 
+   <!-- <div class='nav'>
+      <%= image_tag "/logo.png" %>  -->
+
+      <!-- <div>
     <ul>
       <li><%= link_to 'User Home', users_path %></li>
       <li><%= link_to 'Restaurants', restaurants_path %></li>
@@ -27,7 +73,7 @@
         <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
         <li class='right'><%= link_to 'Log-in', new_login_path %></li>
       <% end %>
-    </ul>
+    </ul> -->
     
       
 

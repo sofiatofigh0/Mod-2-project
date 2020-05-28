@@ -6,6 +6,8 @@
     <button name="review" type="submit" value="Create Review">Create Review</button>
     </form>
 
+ <ul>
 <% @bars.each do |bar| %>
-<p>Bar name:<%= link_to bar.name,bar_path(bar.id)%></p>
+<li> <%= link_to bar.name,bar_path(bar.id)%> <li>
 <% end %>
+</ul>
