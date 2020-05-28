@@ -1,0 +1,8 @@
+<h1>If you would like to edit a review, click on it!</h1>
+
+
+<% @restaurant_review.each do |restaurant| %>
+<li><%= link_to restaurant.title,edit_restaurant_review_path(restaurant.id) %>
+<% end %>
+
+

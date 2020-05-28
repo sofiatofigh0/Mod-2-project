@@ -1,9 +1,15 @@
+<h1>All Listed Restaurants</h1>
 
-<% @restaurants.each do |restaurant| %>
-<p>Restaurant name:<%= link_to restaurant.name,restaurant_path(restaurant.id)%></p>
-<% end %>
 
 <form action="/restaurant_reviews/new" method="get">
     Create a review for a restaurant:
     <button name="review" type="submit" value="Create Review">Create Review</button>
     </form>
+<br>
+<br>
+ 
+<% @restaurants.each do |restaurant| %>
+<li>Restaurant name:<%= link_to restaurant.name,restaurant_path(restaurant.id)%>
+<% end %>
+  
+

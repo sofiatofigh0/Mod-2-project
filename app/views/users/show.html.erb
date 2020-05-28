@@ -4,3 +4,15 @@
     <p><%= restaurant.safety %> | <%= restaurant.hand_sanitizer %></p>
   <% end %>
 </div>
+
+<form action="/restaurant_reviews/new" method="get">
+  Create a review for a restaurant:
+  <button name="review" type="submit" value="Create Review">Create Review</button>
+  </form>
+
+<form action="/restaurant_reviews/show" method="get">
+  Edit an existing review for a restaurant:
+  <button name="edit" type="submit" value="Edit Review">Edit Review</button>
+  </form>
+
+ 

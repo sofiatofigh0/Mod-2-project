@@ -1,13 +1,35 @@
-<h1>create a review</h1>
+<h1>Edit a review</h1>
 
 <%= form_for @restaurant_review do |f| %>
-<%= f.collection_select :restaurant_id,Restaurant.all,:id,:name %><br>
-<p>How safe did you feel? (1-5)</p>
-<%= f.select :safety, @options  %>
 
+<%= f.label :"Choose Restaurant:" %><br>
+<%= f.collection_select :restaurant_id,Restaurant.all,:id,:name %><br><br>
 
-<%= f.hidden_field :user_id, value: params[:user_id] %>
+<%= f.label :"Review Title" %>
+<%= f.text_field :title %>
+<br>
 
+<%= f.label :"How safe did you feel (1-5)? (1 being very unsafe and 5 being very safe)"%><br>
+<%= f.collection_select :safety, [1,2,3,4,5], :to_s,:to_s,include_blank: false %><br><br>
+<br>
+<%= f.label :"Was there hand sanitizer available in the restaurant?" %>
+<%= f.check_box :hand_sanitizer %>
+<br>
+<%= f.label :"Were masks worn by staff in the restaurant?" %>
+<%= f.check_box :masks %>
+<br>
+<%= f.label :"Was there a to-go option available in the restaurant?" %>
+<%= f.check_box :to_go %>
+<br>
+<%= f.label :"Was there reduced seating capacity in the restaurant?" %>
+<%= f.check_box :reduced_seating %>
+<br><br>
+<p><%= f.label :"Please enter any additional comments you wish to add to this review:" %></p>
+<p><%= f.text_area :content, size: "60x8" %></p>
+<%= f.hidden_field :user_id, value: session[:user_id] %>
+<%= button_to 'Delete Review', restaurant_review_path(@restaurant_review), method: :delete %>
+
+<br>
+<br>
 <%= f.submit %>
-    
-<% end %>
+<% end %> 
