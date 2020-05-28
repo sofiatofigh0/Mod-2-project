@@ -4,7 +4,6 @@
 
 <%= f.label :"Choose Restaurant:" %><br>
 <%= f.collection_select :restaurant_id,Restaurant.all,:id,:name %><br><br>
-<br>
 <%= f.label :"How safe did you feel (1-5)? (1 being very unsafe and 5 being very safe)"%><br>
 <%= f.collection_select :safety, [1,2,3,4,5], :to_s,:to_s,include_blank: false %><br><br>
 <br>
@@ -19,10 +18,7 @@
 <br>
 <%= f.label :"Was there reduced seating capacity in the restaurant?" %>
 <%= f.check_box :reduced_seating %>
-
-
-
-
+<%= f.hidden_field :user_id, value: session[:user_id] %>
 
 <br>
 <br>
@@ -31,13 +27,3 @@
 <% end %>
 
 
-
-<!-- t.integer "restaurant_id"
-    t.integer "user_id"
-    t.integer "safety"
-    t.boolean "hand_sanitizer", default: false
-    t.boolean "masks", default: false
-    t.boolean "to_go", default: false
-    t.boolean "reduced_seating", default: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at",  -->

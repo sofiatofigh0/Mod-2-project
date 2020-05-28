@@ -1,0 +1,6 @@
+<h2>My Reviews</h2>
+
+  <% @user.restaurant_reviews.map do |restaurant| %>
+    <p><%= restaurant.safety %> | <%= restaurant.hand_sanitizer %></p>
+  <% end %>
+</div>

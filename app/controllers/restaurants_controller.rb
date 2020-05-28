@@ -1,4 +1,6 @@
 class RestaurantsController < ApplicationController
+    skip_before_action :authorized, only: [:index,:show]
+
         def index
             @restaurants=Restaurant.all
         end
@@ -24,8 +26,7 @@ class RestaurantsController < ApplicationController
         end
         
         def show
-            @restaurant=Restaurant.find(params[:id])
-            byebug
+            @restaurant=Restaurant.find(params[:id]) 
         end
         
         def destroy
@@ -37,7 +38,10 @@ class RestaurantsController < ApplicationController
         private
         def strong_params
             params.require(:restaurant).permit(:name,:cuisine,:address,:phone_number,:yelp_rating,:price_range,:img_url)
-            
         end
+
+        def find_restaurant
+            @restaurant = Restaurant.find(params[:id])
+        end 
     end
     

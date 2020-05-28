@@ -1,4 +1,8 @@
-<%= form_for @user do |f| %>
+<% if flash[:error] %>
+  <p><%= flash[:error] %></p>
+<% end %>
+
+<%= form_for :session, url: login_path do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 
