@@ -2,7 +2,8 @@ class BarsController < ApplicationController
     skip_before_action :authorized, only: [:index,:show]
 
     def index
-        @bars=Bar.all
+        @q = Bar.ransack(params[:q])
+        @bars = @q.result(distinct: true)
     end
     
     def new

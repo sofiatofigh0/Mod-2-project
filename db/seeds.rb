@@ -24,8 +24,9 @@ end
         User.create(name: Faker::Name.first_name + " " + Faker::Name.last_name,age: Faker::Number.within(range: 18..80),location: Faker::Address.city)
 end
 
+Faker::Config.locale = 'en-US'
 76.times do 
-        Bar.create(name: Faker::Coffee.blend_name,address: Faker::Address.street_address + ","+ Faker::Address.zip_code,phone_number: Faker::PhoneNumber.cell_phone)
+        Bar.create(name: Faker::Coffee.blend_name,address: Faker::Address.street_address + ", " + Faker::Address.state + ", " + Faker::Address.zip_code, phone_number: Faker::Number.number(digits: 10))
 end
 
 
