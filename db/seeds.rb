@@ -17,7 +17,7 @@ if response.code == "200"
 end
 
 @info_hash["businesses"].uniq.map do |content,values|
-     Restaurant.create(name:content["name"],address:content["location"]["display_address"][0] + "," + content["location"]["display_address"][1],phone_number:content["display_phone"],yelp_rating:content["rating"],price_range:content["price"],img_url:content["image_url"])
+     Restaurant.create(name:content["name"],address:content["location"]["display_address"][0] + "," + content["location"]["display_address"][1],phone_number: content["display_phone"],yelp_rating:content["rating"],price_range:content["price"],img_url:content["image_url"])
 end
 
 76.times do 

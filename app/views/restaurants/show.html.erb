@@ -13,11 +13,56 @@
 <br><br>
 <p style="font-weight: bold;">Restaurant reviews: </p> 
 <% @restaurant.restaurant_reviews.each do |review| %>
-<p style="font-weight: bold;"> Review heading:</p><%=review.title%>  
-<p style="font-weight: bold;"> Safety:</p><%=review.safety%>  
-<p style="font-weight: bold;"> Hand sanitizer:</p><%=review.hand_sanitizer %>  
-<p style="font-weight: bold;"> Masks:</p><%=review.masks %>  
-<p style="font-weight: bold;"> To-Go Available:</p><%=review.to_go %> 
-<p style="font-weight: bold;"> Reduced Seating enforced:</p><%=review.reduced_seating %> 
-<p style="font-weight: bold;"> Additional Comments:</p><%=review.content %> 
-    <%  end %>     
+<ul>
+    <li><p style="font-weight: bold;"> Review heading:</p><%=review.title%><br>
+    <br>
+    <li><p style="font-weight: bold;"> Safety:</p>
+        <% case review.safety%>  
+        <% when 1 %>
+        <%= "Very unsafe conditions!" %>
+        <% when 2 %>
+        <%= "Unsafe conditions!" %>
+        <% when 3 %>
+        <%= "Average safety conditions!" %>
+        <% when 4 %>
+        <%= "Safe conditions!" %>
+        <% when 5 %>
+        <%= "Very safe conditions!" %>
+    <% end %> <br>
+    <br>
+    <li><p style="font-weight: bold;"> Hand sanitizer:</p>
+        <% if review.hand_sanitizer == true %> 
+            <%= "Hand sanitizer is available at this restaurant." %>
+        <%else %>
+            <%= "There is no hand sanitizer is available at this restaurant." %>
+    <% end %>
+        <br>
+    <br> 
+    <li><p style="font-weight: bold;"> Masks:</p>
+        <% if review.masks == true %> 
+        <%= "The staff at this restaurant are wearing masks." %>
+        <%else %>
+            <%= "The staff at this restaurant are not wearing masks." %>
+    <% end %>
+         <br>
+    <br>
+    <li><p style="font-weight: bold;"> To-Go Available:</p>
+        <% if review.to_go == true %> 
+        <%= "The restaurant has a to-go option." %>
+        <%else %>
+            <%= "The restaurant doesn't have a to-go option." %>
+    <% end %>
+        <br>
+    <br>
+    <li><p style="font-weight: bold;"> Reduced Seating enforced:</p>
+        <% if review.reduced_seating == true %> 
+        <%= "The restaurant has reduced seating." %>
+        <%else %>
+            <%= "The restaurant doesn't have reduced seating." %>
+    <% end %>
+        <br>
+    <br>
+    <li><p style="font-weight: bold;"> Additional Comments:</p><%=review.content %> <br>
+    </ul>
+    <%= "----------------------------------------------------------------------" %>
+        <%  end %>  
