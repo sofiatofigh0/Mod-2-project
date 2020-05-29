@@ -17,8 +17,12 @@
 <br>
 <br>
  
+<div class="flexbox" >
 <% @restaurants.each do |restaurant| %>
-<li> <%= link_to restaurant.name,restaurant_path(restaurant.id),style: 'color:#0C0C0C;', class: 'css_class'%>
+<div class="flexbox-container">
+  <p><%= link_to restaurant.name,restaurant_path(restaurant.id),style: 'color:#0C0C0C;', class: 'css_class'%></p>
+<img class="show-img" src="<%= restaurant.img_url %>" alt="<%= restaurant.name%>"></div>
 <% end %>
+</div>
   
 
