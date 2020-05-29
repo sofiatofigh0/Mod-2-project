@@ -1,4 +1,8 @@
 <h1><%= @bar.name %></h1>
+<<<<<<< HEAD
+<p>Bar Address:<%= @bar.address%></p>
+<p>Bar Phone Number:<%= @bar.phone_number%></p>
+=======
 <br>
 <p style="font-weight: bold;">Bar's address:</p><%= @bar.address%>
 <br>
@@ -7,6 +11,7 @@
 <br><br>
 <p style="font-weight: bold;">Bar reviews: </p> 
 <% @bar.bar_reviews.each do |review| %>
+<<<<<<< HEAD
 <ul>
     <li><p style="font-weight: bold;"> Review heading:</p><%=review.title%><br>
     <br>
@@ -60,4 +65,5 @@
     </ul>
     <%= "----------------------------------------------------------------------" %>
         <%  end %>     
+
 
