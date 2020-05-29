@@ -1,3 +1,4 @@
+
 <br><br>
 <h1 style= "text-decoration: underline;"><%= @restaurant.name %></h1>
 
@@ -10,6 +11,9 @@
 <p style="font-weight: bold;">Restaurant's Yelp Rating:</p><%= @restaurant.yelp_rating%> <br>
 <br>
 <p style="font-weight: bold;">Restaurant's Pricing:</p><%= @restaurant.price_range%> <br>
+
+
+
 
 <br><br>
 <p style="font-weight: bold;">Restaurant's Reviews: </p> 
@@ -57,7 +61,7 @@
     <br>
     <li><p style="font-weight: bold;"> Reduced Seating enforced:</p>
         <% if review.reduced_seating == true %> 
-        <%= "The restaurant has reduced seating." %>
+            <%= "The restaurant has reduced seating." %>
         <%else %>
             <%= "The restaurant doesn't have reduced seating." %>
     <% end %>
@@ -65,5 +69,5 @@
     <br>
     <li><p style="font-weight: bold;"> Additional Comments:</p><%=review.content %> <br>
     </ul>
-    <%= "----------------------------------------------------------------------" %>
-        <%  end %>  
+    <%= "----------------------------------------------------------------------" %>  
+<% end %>

@@ -5,7 +5,13 @@ class BarReviewsController < ApplicationController
     
     def create
         @bar_review=BarReview.create(strong_params)
-        redirect_to bar_path(@bar_review.bar.id)
+        if @bar_review.valid? 
+            redirect_to bar_path(@bar_review.bar.id)
+        else 
+            flash[:errors] = @bar_review.errors.full_messages
+            redirect_to new_bar_review_path
+        end
+        
     end
 
     def edit
@@ -15,8 +21,13 @@ class BarReviewsController < ApplicationController
      
      def update
          @bar_review=BarReview.find(params[:id])
-         @bar_review.update(strong_params)
-         redirect_to user_path(@bar_review.user.id)
+
+         if @bar_review.update(strong_params)
+            redirect_to user_path(@bar_review.user.id)
+         else
+            flash[:errors]=@bar_review.errors.full_messages
+            redirect_to edit_bar_review_path
+         end
      end
  
      def show

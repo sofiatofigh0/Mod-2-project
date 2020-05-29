@@ -61,7 +61,7 @@ background: radial-gradient(to bottom right, #5DE0E5, #CFE8E9);
    width: 40%;
    margin: 5px;
    padding: 5px;
-   background: rgb(245, 219, 190);
+   background-color: rgb(245, 219, 190);
    border-radius: 20px;
    text-align: center;
    flex: 2 0 21%;
@@ -78,6 +78,11 @@ background: radial-gradient(to bottom right, #5DE0E5, #CFE8E9);
   height: 250px;
   width: 350px;
 
+
+ }
+
+ .navbar-brand{
+   width: 600px;
  }
 
  ul {

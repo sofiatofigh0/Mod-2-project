@@ -12,7 +12,7 @@ class RestaurantsController < ApplicationController
         
         def create
             @restaurant=Restaurant.create(strong_params)
-    
+
             redirect_to restaurant_path(@restaurant.id)
         end
         

@@ -4,12 +4,17 @@ class RestaurantReviewsController < ApplicationController
     end
     
     def new
-        @restaurant_review=RestaurantReview.new
+        @restaurant_review=@logged_in_user.restaurant_reviews.new
     end
     
     def create
         @restaurant_review=@logged_in_user.restaurant_reviews.create(strong_params)
-        redirect_to restaurant_path(@restaurant_review.restaurant.id)
+        if @restaurant_review.valid? 
+            redirect_to restaurant_path(@restaurant_review.restaurant.id)
+        else 
+            flash[:errors] = @restaurant_review.errors.full_messages
+            redirect_to new_restaurant_review_path
+        end
     end
     
     def edit
@@ -19,8 +24,13 @@ class RestaurantReviewsController < ApplicationController
     
     def update
         @restaurant_review=RestaurantReview.find(params[:id])
-        @restaurant_review.update(strong_params)
-        redirect_to user_path(@restaurant_review.user.id)
+
+        if @restaurant_review.update(strong_params)
+            redirect_to user_path(@restaurant_review.user.id)
+        else
+            flash[:errors]=@restaurant_review.errors.full_messages
+            redirect_to edit_restaurant_review_path
+        end
     end
 
     def show
@@ -35,6 +45,6 @@ class RestaurantReviewsController < ApplicationController
 
     private
     def strong_params
-        params.require(:restaurant_review).permit(:restaurant_id,:user_id,:title,:safety,:hand_sanitizer,:masks,:to_go,:reduced_seating,:content)
+        params.require(:restaurant_review).permit(:restaurant_id,:user_id,:safety,:hand_sanitizer,:masks,:to_go,:reduced_seating,:content,:title)
    end
 end
