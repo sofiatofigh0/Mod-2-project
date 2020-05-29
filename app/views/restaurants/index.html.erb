@@ -1,3 +1,4 @@
+<br><br>
 <h1>All Listed Restaurants</h1>
 
 <%= search_form_for @q do |f| %>
@@ -17,7 +18,7 @@
 <br>
  
 <% @restaurants.each do |restaurant| %>
-<li> <%= link_to restaurant.name,restaurant_path(restaurant.id)%>
+<li> <%= link_to restaurant.name,restaurant_path(restaurant.id),style: 'color:#0C0C0C;', class: 'css_class'%>
 <% end %>
   
 

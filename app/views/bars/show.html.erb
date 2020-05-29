@@ -1,18 +1,16 @@
-<h1><%= @bar.name %></h1>
-
-<p>Bar Address:<%= @bar.address%></p>
-<p>Bar Phone Number:<%= @bar.phone_number%></p>
-
-<br>
-<p style="font-weight: bold;">Bar's address:</p><%= @bar.address%>
-<br>
-<br>
-<p style="font-weight: bold;">Bar's phone number:</p><%= @bar.phone_number%>
 <br><br>
-<p style="font-weight: bold;">Bar reviews: </p> 
+<h1 style= "text-decoration: underline;"><%= @bar.name %></h1>
+
+<br>
+<p style="font-weight: bold;">Bar's Address:</p><%= @bar.address%>
+<br>
+<br>
+<p style="font-weight: bold;">Bar's Phone Number:</p><%= @bar.phone_number%>
+<br><br>
+<p style="font-weight: bold;">Bar's Reviews: </p> 
 <% @bar.bar_reviews.each do |review| %>
 <ul>
-    <li><p style="font-weight: bold;"> Review heading:</p><%=review.title%><br>
+    <li><p style="font-weight: bold;"> Review Heading:</p><%=review.title%><br>
     <br>
     <li><p style="font-weight: bold;"> Safety:</p>
         <% case review.safety%>  

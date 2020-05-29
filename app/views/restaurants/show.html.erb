@@ -1,17 +1,18 @@
+<br><br>
+<h1 style= "text-decoration: underline;"><%= @restaurant.name %></h1>
 
 <img class="show-img" src="<%= @restaurant.img_url %>" alt="<%= @restaurant.name%>">
-<h1><%= @restaurant.name %></h1>
 <br><br>
-<p style="font-weight: bold;">Restaurant address:</p><%= @restaurant.address%><br>
+<p style="font-weight: bold;">Restaurant's Address:</p><%= @restaurant.address%><br>
 <br>
-<p style="font-weight: bold;">Restaurant phone number:</p><%= @restaurant.phone_number%> <br>
+<p style="font-weight: bold;">Restaurant's Phone Number:</p><%= @restaurant.phone_number%> <br>
 <br>
-<p style="font-weight: bold;">Restaurant yelp rating:</p><%= @restaurant.yelp_rating%> <br>
+<p style="font-weight: bold;">Restaurant's Yelp Rating:</p><%= @restaurant.yelp_rating%> <br>
 <br>
-<p style="font-weight: bold;">Restaurant pricing:</p><%= @restaurant.price_range%> <br>
+<p style="font-weight: bold;">Restaurant's Pricing:</p><%= @restaurant.price_range%> <br>
 
 <br><br>
-<p style="font-weight: bold;">Restaurant reviews: </p> 
+<p style="font-weight: bold;">Restaurant's Reviews: </p> 
 <% @restaurant.restaurant_reviews.each do |review| %>
 <ul>
     <li><p style="font-weight: bold;"> Review heading:</p><%=review.title%><br>

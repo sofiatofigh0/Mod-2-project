@@ -16,70 +16,51 @@
   
  /* body {
     margin: 0;  
-    background: linear-gradient(to top, #e0eafc, #cfdef3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* color:navy;
+    background: linear-gradient(to top, #2980b9, #6dd5fa, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* color:orange;
     font: Verdana
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-  }
-
+  } */
   html {
     height: 100%;
-  }  */ 
+  }   
 
-  /* .logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 25%;
-  }
 
-  .show-img {
-   height: 150ppx;
-   width: 150ppx;
-  } */
-  
-  /* ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 25%;
-    background-color: #f1f1f1;
-    position: relative;
+  body {
+    background: #5DE0E5;
+background: -webkit-radial-gradient(top left, #5DE0E5, #CFE8E9);
+background: -moz-radial-gradient(top left, #5DE0E5, #CFE8E9);
+background: radial-gradient(to bottom right, #5DE0E5, #CFE8E9);
     height: 100%;
-    overflow: auto;
-  }
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif; 
+    font-size: 24px; 
   
-  li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-  }
+  } 
   
-  li a.active {
-    background-color: #4CAF50;
+  ul a:hover:not(.active) {
+    background-color: orange;
     color: white;
-  }
-  
-  li a:hover:not(.active) {
-    background-color: #555;
-    color: white;
-  /* } */
+  } 
+
+
 
  .nav-item {
 
-  margin: 0 10px;
+  margin: 0 20px;
 
  }
 
  .show-img {
 
-  width: 200px;
- }
+  width: 400px;
 
+ }
 
  ul {
 

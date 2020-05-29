@@ -1,3 +1,4 @@
+<br><br>
 <h1>All Listed Bars</h1>
 
 <%= search_form_for @q do |f| %>
@@ -17,5 +18,5 @@
     <br>
 
 <% @bars.each do |bar| %>
-<li> <%= link_to bar.name,bar_path(bar.id)%>
+<li> <%= link_to bar.name,bar_path(bar.id),style: 'color:#0C0C0C;', class: 'css_class'%>
 <% end %>

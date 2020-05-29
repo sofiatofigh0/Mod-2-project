@@ -1,7 +1,8 @@
+<br><br>
 <h2>My Reviews</h2>
 
   <% @user.restaurant_reviews.map do |restaurant| %>
-    <p><%= restaurant.safety %> | <%= restaurant.hand_sanitizer %></p>
+    <p><%= link_to restaurant.title,restaurant_review_path,style: 'color:#f59f5f;', class: 'css_class' %> </p>
   <% end %>
 </div>
 

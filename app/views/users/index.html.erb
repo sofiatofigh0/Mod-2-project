@@ -1,6 +1,8 @@
+<br><br>
 <h1>Users</h1>
 
-
+<ul>
   <% @users.each do |user| %>
-      <h3><%= link_to user.name, user %></h3>
+      <li><h3><em><%= link_to user.name, user,style: 'color:#0C0C0C;', class: 'css_class' %></em></h3>
   <% end %>
+      </ul>
