@@ -1,0 +1,6 @@
+<h1>If you would like to edit a review, click on it!</h1>
+
+
+<% @bar_review.each do |bar| %>
+<li><%= link_to bar.title,edit_bar_review_path(bar.id) %>
+<% end %>

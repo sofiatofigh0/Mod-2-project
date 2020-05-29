@@ -1,4 +1,4 @@
-<h1>Create a review</h1>
+<h1>Edit a review</h1>
 
 <%= form_for @bar_review do |f| %>
 
@@ -26,11 +26,10 @@
 <br><br>
 <p><%= f.label :"Please enter any additional comments you wish to add to this review:" %></p>
 <p><%= f.text_area :content, size: "60x8" %></p>
-
 <%= f.hidden_field :user_id, value: session[:user_id] %>
+<%= button_to 'Delete Review', bar_review_path(@bar_review), method: :delete %>
 
 <br>
 <br>
 <%= f.submit %>
-    
-<% end %>
+<% end %> 

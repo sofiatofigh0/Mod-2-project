@@ -1,4 +1,18 @@
 <h1><%= @bar.name %></h1>
-<p>bar address:<%= @bar.address%></p>
-<p>bar phone number:<%= @bar.phone_number%></p>
+<br>
+<p style="font-weight: bold;">Bar's address:</p><%= @bar.address%>
+<br>
+<br>
+<p style="font-weight: bold;">Bar's phone number:</p><%= @bar.phone_number%>
+<br><br>
+<p style="font-weight: bold;">Bar reviews: </p> 
+<% @bar.bar_reviews.each do |review| %>
+<p style="font-weight: bold;"> Review heading:<%=review.title%> </p>
+<p style="font-weight: bold;"> Safety:<%=review.safety%> </p>
+<p style="font-weight: bold;"> Hand sanitizer: <%=review.hand_sanitizer %> </p>
+<p style="font-weight: bold;"> Masks: <%=review.masks %> </p>
+<p style="font-weight: bold;"> To-Go Available: <%=review.to_go %> </p>
+<p style="font-weight: bold;"> Reduced Seating enforced: <%=review.reduced_seating %> </p>
+<p style="font-weight: bold;"> Additional Comments: <%=review.content %> </p>
+    <%  end %> 
 

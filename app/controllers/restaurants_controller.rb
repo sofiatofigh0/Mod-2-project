@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
 
         def index
             @q = Restaurant.ransack(params[:q])
-          @restaurants = @q.result(distinct: true)
+            @restaurants = @q.result(distinct: true)
        end
         
         def new

@@ -1,13 +1,21 @@
 <h1>All Listed Bars</h1>
 
+<%= search_form_for @q do |f| %>
+ Search for a listed bar:
+  <%= f.search_field :name_cont %>
+  <%= f.submit  %>
+<% end %>
+
+<br>
+<br>
 
 <form action="/bar_reviews/new" method="get">
     Create a review for a bar:
     <button name="review" type="submit" value="Create Review">Create Review</button>
     </form>
+    <br>
+    <br>
 
- <ul>
 <% @bars.each do |bar| %>
-<li> <%= link_to bar.name,bar_path(bar.id)%> <li>
+<li> <%= link_to bar.name,bar_path(bar.id)%>
 <% end %>
-</ul>
